@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import './Login.css';
 
@@ -8,6 +8,7 @@ export function Login() {
   const [username,setUsername]=useState("");
   const [password,setPassword]=useState("");
   const [userData, setUserData] = useState([]);
+  const navigate = useNavigate();
   
   useEffect(() => {
     const fetchData = async () => {
@@ -37,11 +38,11 @@ export function Login() {
       if (user.role === 'admin') {
         // Redirect to admin page
         console.log('Admin login successful');
-        Navigate('/create');
+        navigate('/create');
         
       } else if (user.role === '') {
         // Redirect to user page
-        Navigate('/inicio');
+        navigate('/inicio');
         console.log('User login successful');
       }
     } else {

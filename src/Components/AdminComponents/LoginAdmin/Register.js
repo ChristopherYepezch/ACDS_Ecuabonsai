@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import "./Login.css";
 
@@ -9,6 +10,7 @@ export function Register() {
   const [correo, setEmail] = useState('');
   const [contraseña, setPassword] = useState('');
   const[role , setRole] = useState('')
+  const navigate = useNavigate();
 
   const handleNameChange = (event) => {
     setName(event.target.value);
