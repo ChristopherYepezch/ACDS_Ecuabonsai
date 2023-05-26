@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import './Login.css';
 import Swal from 'sweetalert2';
@@ -8,10 +9,11 @@ export function LoginUser() {
   const [username,setUsername]=useState("");
   const [password,setPassword]=useState("");
   const [userData, setUserData] = useState([]);
-  
+  const navigate = useNavigate();
+
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get('http://localhost:5000/user');
+      const result = await axios.get('http://34.204.6.112:5000/user');
       setUserData(result.data);
     };
 
@@ -37,13 +39,13 @@ export function LoginUser() {
       if (user.role === 'admin' ) {
         // Redirect to admin page
         console.log('Admin login successful');
-         window.location.href=`http://localhost:3000/create?username=` + encodeURIComponent(username);
+        navigate('/create'); 
                 
-        
       } else if (user.role === '') {
         // Redirect to user page
-        window.location.href=`http://localhost:3000/?username=` + encodeURIComponent(username);      
         console.log('User login successful');
+        navigate('/?username='+username);     
+
       }
     } else {
       Swal.fire({

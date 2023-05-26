@@ -6,7 +6,7 @@ import axios from "axios";
 
 export const getProductos = async () => {
   try {
-    const response = await axios.get(`http://localhost:5000/producto`);
+    const response = await axios.get(`http://34.204.6.112:5000/producto`);
     return response;
   } catch (error) {
     console.log(error);
@@ -30,7 +30,7 @@ export function DeleteForm() {
   const eliminar = async () => {
     try {
       await axios.delete(
-        `http://localhost:5000/producto/${bonsaiSeleccionado._id}`
+        `http://34.204.6.112:5000/producto/${bonsaiSeleccionado._id}`
       );
       setUsers(users.filter((bonsai) => bonsai._id !== bonsaiSeleccionado._id));
       setModalEliminar(false);
@@ -70,7 +70,7 @@ export function DeleteForm() {
               <tr>
                 <td>{elemento._id}</td>
                 <td>{elemento.tipo}</td>
-                <td><img className="imagenArbol" src={`http://localhost:5000/${elemento.image}`} alt="arbolimagen"></img></td>
+                <td><img className="imagenArbol" src={`http://34.204.6.112:5000/${elemento.image}`} alt="arbolimagen"></img></td>
                 <td>${elemento.precio}</td>
                 <td>
                   <button

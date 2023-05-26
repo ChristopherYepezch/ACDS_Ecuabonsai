@@ -33,7 +33,7 @@ export function Register() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/user', {
+      const response = await axios.post('http://34.204.6.112:5000/user', {
       nombre,
       nombreusuario,
       correo,
@@ -42,7 +42,7 @@ export function Register() {
       });
       console.log(response.data);
       alert("Se ha registrado su datos correctamente \n Ingrese sus datos a continuación");
-            window.location.href=`http://localhost:3000/micuenta`
+      navigate('/micuenta');
     } catch (error) {
       console.error(error);
     }

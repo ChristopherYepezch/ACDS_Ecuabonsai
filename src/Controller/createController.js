@@ -4,7 +4,7 @@ import React, {useState} from "react";
 export function guardarProducto(especie,imagen,promo){
     const [products, setProducts] = useState([]);
     const [promos, setPromos] = useState([]);
-    const uri = "http://localhost:5000/";
+    const uri = "http://34.204.6.112:5000/";
   
     useEffect(() => {
       async function getProducts() {

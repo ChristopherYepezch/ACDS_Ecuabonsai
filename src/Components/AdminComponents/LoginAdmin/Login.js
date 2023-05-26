@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Navigate } from 'react-router-dom';
 import axios from 'axios';
 import './Login.css';
 
@@ -10,7 +11,7 @@ export function Login() {
   
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get('http://localhost:5000/user');
+      const result = await axios.get('http://34.204.6.112:5000/user');
       setUserData(result.data);
     };
 
@@ -36,11 +37,11 @@ export function Login() {
       if (user.role === 'admin') {
         // Redirect to admin page
         console.log('Admin login successful');
-        window.location.href=`http://localhost:3000/create`
+        Navigate('/create');
         
       } else if (user.role === '') {
         // Redirect to user page
-        window.location.href=`http://localhost:3000/inicio`
+        Navigate('/inicio');
         console.log('User login successful');
       }
     } else {
