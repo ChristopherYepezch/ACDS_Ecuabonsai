@@ -12,7 +12,7 @@ export function Login() {
   
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get('http://34.204.6.112:5000/user');
+      const result = await axios.get('https://ligobas.com/user');
       setUserData(result.data);
     };
 
