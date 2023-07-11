@@ -35,7 +35,7 @@ export function Register() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('https://ligobas.com/user', {
+      const response = await axios.post('http://ligobas.com/user', {
       nombre,
       nombreusuario,
       correo,

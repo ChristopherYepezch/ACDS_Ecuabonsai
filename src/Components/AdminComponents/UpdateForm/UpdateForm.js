@@ -6,7 +6,7 @@ import axios from "axios";
 
 export const getProductos = async () => {
   try {
-    const response = await axios.get(`https://ligobas.com/producto`);
+    const response = await axios.get(`http://ligobas.com/producto`);
     return response;
   } catch (error) {
     console.log(error);
@@ -20,7 +20,7 @@ export function UpdateForm() {
     
     async function getPromos() {
       var promos = [];
-      let aux = (await axios.get("https://ligobas.com/promotion")).data;
+      let aux = (await axios.get("http://ligobas.com/promotion")).data;
       for (let i = 0; i < aux.length; i++) {
         var promo = aux[i].descuento;
         if (promo !== 'ninguna') {
@@ -67,7 +67,7 @@ export function UpdateForm() {
       promocion: bonsaiSeleccionado.promocion
     };
     try {
-      await axios.put(`https://ligobas.com/producto/${bonsaiSeleccionado._id}`, updatedProducto);
+      await axios.put(`http://ligobas.com/producto/${bonsaiSeleccionado._id}`, updatedProducto);
     
       catalogos.map((bonsai) => {
         if (bonsai._id === bonsaiSeleccionado._id) {
@@ -119,7 +119,7 @@ export function UpdateForm() {
               <tr>
                 <td>{elemento._id}</td>
                 <td>{elemento.tipo}</td>
-                <td><img className="imagenArbol" src={`https://ligobas.com/${elemento.image}`} alt="arbolimagen"></img></td>
+                <td><img className="imagenArbol" src={`http://ligobas.com/${elemento.image}`} alt="arbolimagen"></img></td>
                 <td>{elemento.descripcion}</td>
                 <td>${elemento.precio}</td>
                 <td>{elemento.promocion}</td>

@@ -6,7 +6,7 @@ import axios from "axios";
 
 export const getProductos = async () => {
   try {
-    const response = await axios.get(`https://ligobas.com/producto`);
+    const response = await axios.get(`http://ligobas.com/producto`);
     return response;
   } catch (error) {
     console.log(error);
@@ -30,7 +30,7 @@ export function DeleteForm() {
   const eliminar = async () => {
     try {
       await axios.delete(
-        `https://ligobas.com/producto/${bonsaiSeleccionado._id}`
+        `http://ligobas.com/producto/${bonsaiSeleccionado._id}`
       );
       setUsers(users.filter((bonsai) => bonsai._id !== bonsaiSeleccionado._id));
       setModalEliminar(false);
@@ -70,7 +70,7 @@ export function DeleteForm() {
               <tr>
                 <td>{elemento._id}</td>
                 <td>{elemento.tipo}</td>
-                <td><img className="imagenArbol" src={`https://ligobas.com/${elemento.image}`} alt="arbolimagen"></img></td>
+                <td><img className="imagenArbol" src={`http://ligobas.com/${elemento.image}`} alt="arbolimagen"></img></td>
                 <td>${elemento.precio}</td>
                 <td>
                   <button

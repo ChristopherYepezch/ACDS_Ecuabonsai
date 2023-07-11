@@ -13,7 +13,7 @@ export function LoginUser() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get('https://ligobas.com/user');
+      const result = await axios.get('http://ligobas.com/user');
       setUserData(result.data);
     };
 
