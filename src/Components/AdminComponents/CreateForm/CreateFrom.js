@@ -4,7 +4,7 @@ import axios from "axios";
 export function CreateForm() {
   const [products, setProducts] = useState([]);
   const [promos, setPromos] = useState([]);
-  const uri = "http://ligobas.com/";
+  const uri = "http://ligobas.com:5000/";
 
   useEffect(() => {
     async function getProducts() {

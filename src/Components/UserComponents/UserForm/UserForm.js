@@ -5,7 +5,7 @@ import Catalogo from "./Catalogo.js";
 
 export const getProductos = async () => {
   try {
-    const response = await axios.get(`http://ligobas.com/producto`);
+    const response = await axios.get(`http://ligobas.com:5000/producto`);
     return response;
   } catch (error) {
     console.log(error);

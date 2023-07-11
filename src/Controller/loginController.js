@@ -1,12 +1,12 @@
 import axios from 'axios'
-const uri="http://ligobas.com";
+const uri="http://ligobas.com:5000";
 export async function validarLogin(username,password){    
     try{
         const bool= await axios.get(`${uri}user/${username}`).then(res=>
             res.data[0].contraseña
         );
         if(bool===password){
-            window.location.href=`http://ligobas.com/create`
+            window.location.href=`http://ligobas.com:5000/create`
         }else{
             alert("Contraseña incorrecta");
         }

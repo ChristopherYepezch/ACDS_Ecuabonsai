@@ -4,7 +4,7 @@ import React, {useState} from "react";
 export function guardarProducto(especie,imagen,promo){
     const [products, setProducts] = useState([]);
     const [promos, setPromos] = useState([]);
-    const uri = "http://ligobas.com/";
+    const uri = "http://ligobas.com:5000/";
   
     useEffect(() => {
       async function getProducts() {

@@ -70,7 +70,7 @@ const Catalogo = ({ _id, promocion,image,precio,descripcion,tipo}) => {
      <div className="col">     
         <br></br>
             <div className="card"  style={{width: "18rem"}}>
-                <img className="imgCat" src={`http://ligobas.com/${image}`}alt="imagenes"></img>
+                <img className="imgCat" src={`http://ligobas.com:5000/${image}`}alt="imagenes"></img>
                 <div className="card-body">
                     <h5 className="card-title" >{tipo}</h5>
                     <h6>{descripcion}</h6>
